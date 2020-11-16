@@ -30,7 +30,7 @@ function hideOverlay(state) {
 }
 
 // Modal ablak elrejtése
-function hideModal() {
+function hideModal(state) {
     let modal = document.querySelectorAll('.modal_show');
     for (let i=0; i<modal.length;i += 1) {
         modal[i].setAttribute('class', 'modal_hide');
@@ -38,6 +38,7 @@ function hideModal() {
             modal[i].setAttribute('class', 'modal');
         }, 990);
     }
+    console.log(state);
 }
 
 
@@ -50,7 +51,7 @@ function clickOpenModal() {
 
 function clickHideModal(state) {
     hideOverlay();
-    hideModal();        
+    hideModal(state);        
 }
 
 // Modal megjelenítő gomb eseménykezelője
@@ -59,16 +60,16 @@ modalButton.addEventListener('click', clickOpenModal);
 
 // Modal OK gomb eseménykezelője -> elrejtés
 let okButton = document.getElementById('modal-button_ok');
-okButton.addEventListener('click', clickHideModal);
+okButton.addEventListener('click', () => clickHideModal(true));
 
 // Modal CANCEL gomb eseménykezelője -> elrejtés
 let cancelButton = document.getElementById('modal-button_cancel');
-cancelButton.addEventListener('click', clickHideModal);
+cancelButton.addEventListener('click', () => clickHideModal(false));
 
 // Overlay eseménykezelője -> elrejtés
 let overlay = document.getElementById('overlay');
-overlay.addEventListener('click', clickHideModal);
+overlay.addEventListener('click', () => clickHideModal(false));
 
 // Modal X gomb eseménykezelője -> elrejtés
 let modalClose = document.getElementById('modal-close');
-modalClose.addEventListener('click', clickHideModal);
+modalClose.addEventListener('click', () => clickHideModal(false));

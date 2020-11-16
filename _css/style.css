@@ -136,6 +136,7 @@ footer {
     -moz-animation: fadeIn ease 1s;
     -o-animation: fadeIn ease 1s;
     -ms-animation: fadeIn ease 1s;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.6);
 }
 
 .modal_show {
@@ -155,6 +156,7 @@ footer {
     -moz-animation: fadeIn ease 1s;
     -o-animation: fadeIn ease 1s;
     -ms-animation: fadeIn ease 1s;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.6);
 }
 
 .modal_hide {
@@ -173,6 +175,7 @@ footer {
     -moz-animation: fadeOut ease 1s;
     -o-animation: fadeOut ease 1s;
     -ms-animation: fadeOut ease 1s;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.6);
 }
 
 @media screen and (min-width: 560px) {
@@ -193,6 +196,7 @@ footer {
         -moz-animation: fadeIn ease 1s;
         -o-animation: fadeIn ease 1s;
         -ms-animation: fadeIn ease 1s;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.6);
     }
     
     .modal_show {
@@ -212,6 +216,7 @@ footer {
         -moz-animation: fadeIn ease 1s;
         -o-animation: fadeIn ease 1s;
         -ms-animation: fadeIn ease 1s;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.6);
     }
     
     .modal_hide {
@@ -230,6 +235,7 @@ footer {
         -moz-animation: fadeOut ease 1s;
         -o-animation: fadeOut ease 1s;
         -ms-animation: fadeOut ease 1s;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.6);
     }
 }
 
