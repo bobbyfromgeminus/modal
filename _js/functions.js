@@ -3,7 +3,7 @@
 
 // Modal overlay megjelenítése
 function showOverlay() {
-    let overlay = document.querySelectorAll('.overlay');
+    const overlay = document.querySelectorAll('.overlay');
     for (let i=0; i<overlay.length;i += 1) {
         overlay[i].setAttribute('class', 'overlay_show');
     
@@ -12,7 +12,7 @@ function showOverlay() {
 
 // Modal ablak megjelenítése
 function showModal() {
-    let modal = document.querySelectorAll('.modal');
+    const modal = document.querySelectorAll('.modal');
     for (let i=0; i<modal.length;i += 1) {
         modal[i].setAttribute('class', 'modal_show');
     }
@@ -20,7 +20,7 @@ function showModal() {
 
 // Modal overlay elrejtése
 function hideOverlay(state) {
-    let overlay = document.querySelectorAll('.overlay_show');
+    const overlay = document.querySelectorAll('.overlay_show');
     for (let i=0; i<overlay.length;i += 1) {
         overlay[i].setAttribute('class', 'overlay_hide');
         setTimeout(() => {
@@ -31,7 +31,7 @@ function hideOverlay(state) {
 
 // Modal ablak elrejtése
 function hideModal(state) {
-    let modal = document.querySelectorAll('.modal_show');
+    const modal = document.querySelectorAll('.modal_show');
     for (let i=0; i<modal.length;i += 1) {
         modal[i].setAttribute('class', 'modal_hide');
         setTimeout(() => {
@@ -45,7 +45,7 @@ function hideModal(state) {
 function clickOpenModal() {
     showOverlay();
     showModal();
-    let okButton = document.getElementById('modal-button_ok');
+    const okButton = document.getElementById('modal-button_ok');
     okButton.focus();   
 }
 
@@ -56,13 +56,13 @@ function clickHideModal(state) {
 
 // Eseménykezelő a megjelenítéshez
 function openEventListener(id, state){
-    let element = document.getElementById(id);
+    const element = document.getElementById(id);
     element.addEventListener('click', () => clickOpenModal(state));
 }
 
 // Eseménykezelő az elrejtéshez
 function hideEventListener(id, state){
-    let element = document.getElementById(id);
+    const element = document.getElementById(id);
     element.addEventListener('click', () => clickHideModal(state));
 }
 
