@@ -15,7 +15,7 @@ function showModal() {
 }
 
 // Modal ablak és overlay elrejtése
-function hideModal() {
+function hideModal(state) {
     let overlay = document.querySelectorAll('.overlay_show');
     for (let i=0; i<overlay.length;i += 1) {
         overlay[i].setAttribute('class', 'overlay_hide');
@@ -30,6 +30,7 @@ function hideModal() {
             modal[i].setAttribute('class', 'modal');
         }, 990);
     }
+    console.log(state);
 }
 
 
@@ -44,23 +45,23 @@ modalButton.addEventListener('click', function() {
 // Modal OK gomb eseménykezelője -> elrejtés
 let okButton = document.getElementById('modal-button_ok');
 okButton.addEventListener('click', function() {
-    hideModal();        
+    hideModal(true);        
 });
 
 // Modal CANCEL gomb eseménykezelője -> elrejtés
 let cancelButton = document.getElementById('modal-button_cancel');
 cancelButton.addEventListener('click', function() {
-    hideModal();        
+    hideModal(false);        
 });
 
 // Overlay eseménykezelője -> elrejtés
 let overlay = document.getElementById('overlay');
 overlay.addEventListener('click', function() {
-    hideModal();        
+    hideModal(false);        
 });
 
 // Modal X gomb eseménykezelője -> elrejtés
 let modalClose = document.getElementById('modal-close');
 modalClose.addEventListener('click', function() {
-    hideModal();        
+    hideModal(false);        
 });
