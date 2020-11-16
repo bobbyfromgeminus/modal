@@ -35,9 +35,10 @@ function hideModal() {
 
 // Modal megjelenítő gomb eseménykezelője
 let modalButton = document.getElementById('modal-button');
-
 modalButton.addEventListener('click', function() {
     showModal();
+    let okButton = document.getElementById('modal-button_ok');
+    okButton.focus();
 });
 
 // Modal OK gomb eseménykezelője -> elrejtés

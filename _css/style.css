@@ -14,7 +14,7 @@ body {
     background-color: rgba(255,255,255,1);
     display: grid;
     grid-template-columns: 1rem 1fr 1rem;
-	grid-template-rows: 8rem 1fr 3rem;
+    grid-template-rows: 8rem 1fr 3rem;
 }
 
 @media screen and (min-width: 560px) {
