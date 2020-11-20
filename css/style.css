@@ -191,16 +191,17 @@ footer {
     padding: 0 0 2rem 0;
 }
 
-#modal-close {
+.modal-close {
    display: block; 
    position: absolute;
    right: 0%;
    top: 0%;
    margin: 0.5rem 0.5rem 0 0;
+   cursor: pointer;
 }
 
 
-#modal-button_ok {
+.modal-button_ok {
     display: inline-block;
     height: 2.5rem;
     line-height:  2.5rem;
@@ -211,9 +212,16 @@ footer {
     border-radius: 0.2rem;
     color: rgba(255,255,255,1);
     float: right;
+    cursor: pointer;
+    transition: background-color .5s;
 }
 
-#modal-button_cancel {
+.modal-button_ok:hover {
+    background-color: rgba(0, 200, 50, 1);
+}
+
+
+.modal-button_cancel {
     display: inline-block;
     height: 2.5rem;
     line-height:  2.5rem;
@@ -224,9 +232,15 @@ footer {
     border-radius: 0.2rem;
     color: rgba(255,255,255,1);
     float: right;
+    cursor: pointer;
+    transition: background-color .5s;
 }
 
-#modal-button {
+.modal-button_cancel:hover {
+    background-color: rgba(200, 0, 20, 1);
+}
+
+.modal-button {
     display: block;
     height: 4rem;
     line-height:  4rem;
@@ -239,9 +253,10 @@ footer {
     color: rgba(255,255,255,1);
     cursor: pointer;
     transition: background-color 0.5s;
+    cursor: pointer;
 }
 
-#modal-button:hover {
+.modal-button:hover {
     background-color: rgba(255,30,100,1);
 }
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
-<body tabindex="-1">
+<body>
 
     <header>
         <h1 class="header">Javascript haladó Projekt - Modal ablak elkészítése.</h1>
@@ -15,7 +15,7 @@
     <main>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Senectus et netus et malesuada fames ac turpis egestas. Risus feugiat in ante metus dictum. Purus gravida quis blandit turpis cursus. Bibendum enim facilisis gravida neque convallis a. Consectetur lorem donec massa sapien faucibus et. Lectus magna fringilla urna porttitor rhoncus dolor purus non enim. At tellus at urna condimentum. Ut tellus elementum sagittis vitae et leo duis. Suscipit tellus mauris a diam maecenas.
         <br /><br />
-        <button id="modal-button">Open Modal Box</button>
+        <button class="modal-button">Open Modal Box</button>
         <br /><br />
         Amet luctus venenatis lectus magna fringilla urna porttitor. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Id velit ut tortor pretium. Quam pellentesque nec nam aliquam sem et tortor. Risus commodo viverra maecenas accumsan. Vel pharetra vel turpis nunc eget lorem dolor sed. Nec dui nunc mattis enim ut tellus elementum. Vivamus at augue eget arcu dictum. Sit amet nisl suscipit adipiscing. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Sagittis purus sit amet volutpat consequat. Malesuada fames ac turpis egestas integer eget aliquet nibh praesent. Non pulvinar neque laoreet suspendisse interdum consectetur. Laoreet suspendisse interdum consectetur libero id faucibus. Urna cursus eget nunc scelerisque. Purus viverra accumsan in nisl nisi scelerisque eu.
         <br /><br />
@@ -29,15 +29,15 @@
         <a href="" class="menu-item">Menu #3</a>
     </nav>
 
-    <div class="overlay" id="overlay"></div>
+    <div class="overlay"></div>
     <div class="modal">
         <h3 class="modal-header">This is a Modal-Box</h1>
             <p class="clear">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Amet cursus sit amet dictum sit amet justo donec. Orci eu lobortis elementum nibh tellus molestie. Netus et malesuada fames ac turpis egestas integer eget. Curabitur vitae nunc sed velit. Nunc aliquet bibendum enim facilisis. Risus in hendrerit gravida rutrum quisque non tellus. Vel pharetra vel turpis nunc eget lorem. Vitae aliquet nec ullamcorper sit. Tristique risus nec feugiat in. Rhoncus dolor purus non enim praesent elementum facilisis leo. Duis convallis convallis tellus id interdum velit laoreet id. Duis ultricies lacus sed turpis tincidunt id aliquet. Orci nulla pellentesque dignissim enim sit amet venenatis.
             </p>
-            <button id="modal-button_cancel" tabindex="1">Cancel</button>
-            <button id="modal-button_ok" tabindex="2">OK</button>
-            <i class="fa fa-times" id="modal-close" tabindex="2"></i>
+            <button class="modal-button_ok modalController" tabindex="1">OK</button>
+            <button class="modal-button_cancel modalController" tabindex="2">Cancel</button>
+            <i class="fa fa-times modal-close modalController" tabindex="3"></i>
     </div>
 
     <script src="./js/functions.js"></script>

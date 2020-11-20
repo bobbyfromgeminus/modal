@@ -1,4 +1,76 @@
 'use strict';
+/*
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                    MODAL ÉS OVERLAY VEZÉRLÉSE
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+/*
+-------------------------
+         ELEMEK
+-------------------------
+*/
+//      bejártható elemek
+const eOne = document.querySelector('.modal-button_ok');
+const eTwo = document.querySelector('.modal-button_cancel');
+const eThree = document.querySelector('.modal-close');
+
+/*
+-------------------------
+     TABINDEX LOOP
+-------------------------
+*/
+//      tabindex loop - tabindex növelés, amikor a close gomb fókuszba kerül
+function changeTabIndexFocus(ownName) {
+    let eOneTab = parseInt(eOne.tabIndex);
+    let eTwoTab = parseInt(eTwo.tabIndex);
+    if (ownName==='modal-close') {
+        eOne.setAttribute('tabindex', eOneTab+3);
+        eTwo.setAttribute('tabindex', eTwoTab+3);
+    }
+}
+//      tabindex loop - tabindex növelés, amikor a close gombról lekerül a fókusz
+function changeTabIndexFocusOut(ownName) {
+    let eThreeTab = parseInt(eThree.tabIndex);
+    if (ownName==='modal-close') {
+        eThree.setAttribute('tabindex', eThreeTab+3);
+    }
+}
+
+/*
+-------------------------
+     ESEMÉNYKEZELŐK
+-------------------------
+*/
+//      focus eseménykezelő
+function focusListener(ownName){
+    const focusElement = document.querySelector('.'+ownName);
+    focusElement.addEventListener('focus', () => changeTabIndexFocus(ownName));
+}
+//      focusout eseménykezelő
+function focusOutListener(ownName){
+    const focusOutElement = document.querySelector('.'+ownName);
+    focusOutElement.addEventListener('focusout', () => changeTabIndexFocusOut(ownName));
+}
+
+/*
+-------------------------
+ESEMÉNYKEZELŐK MEGHÍVÁSAI
+-------------------------
+*/
+//      close gomb focus
+focusListener('modal-close');
+//      close gomb focusout
+focusOutListener('modal-close');
+
+
+
+
+/*
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                    MODAL ÉS OVERLAY VEZÉRLÉSE
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
 
 /*
 -------------------------
@@ -23,7 +95,6 @@ function overlayDisplayNone() {
     overlay.setAttribute('class', 'overlay overlay_hide overlay_none');
     overlay.removeEventListener("webkitAnimationEnd", overlayDisplayNone, false);
 }
-
 
 /*
 -------------------------
@@ -50,7 +121,6 @@ function modalDisplayNone() {
     modal.removeEventListener("webkitAnimationEnd", modalDisplayNone, false);
 }
 
-
 /*
 -------------------------
   SHOW/HIDE MEGHÍTÁSOK
@@ -60,7 +130,10 @@ function modalDisplayNone() {
 function clickOpenModal() {
     showOverlay();
     showModal();
-    const okButton = document.getElementById('modal-button_ok');
+    eOne.setAttribute('tabindex', 1);
+    eTwo.setAttribute('tabindex', 2);
+    eThree.setAttribute('tabindex', 3);
+    const okButton = document.querySelector('.modal-button_ok');
     okButton.focus();  
 }
 //      elrejtéshez
@@ -69,23 +142,21 @@ function clickHideModal(state) {
     hideModal(state);        
 }
 
-
 /*
 -------------------------
      ESEMÉNYKEZELŐK
 -------------------------
 */
 //      megjelenítéshez
-function openEventListener(id, state){
-    const element = document.getElementById(id);
+function openEventListener(className, state){
+    const element = document.querySelector(className);
     element.addEventListener('click', () => clickOpenModal(state));
 }
 //      elrejtéshez
-function hideEventListener(id, state){
-    const element = document.getElementById(id);
+function hideEventListener(className, state){
+    const element = document.querySelector(className);
     element.addEventListener('click', () => clickHideModal(state));
 }
-
 
 /*
 -------------------------
@@ -93,12 +164,12 @@ ESEMÉNYKEZELŐK MEGHÍVÁSAI
 -------------------------
 */
 // Modal megjelenítő gomb -> megjelenítés
-openEventListener('modal-button', true);
+openEventListener('.modal-button', true);
 // Modal OK gomb -> elrejtés
-hideEventListener('modal-button_ok', true);
+hideEventListener('.modal-button_ok', true);
 // Modal CANCEL gomb -> elrejtés
-hideEventListener('modal-button_cancel', false);
+hideEventListener('.modal-button_cancel', false);
 // Overlay -> elrejtés
-hideEventListener('overlay', false);
+hideEventListener('.overlay', false);
 // Modal X gomb -> elrejtés
-hideEventListener('modal-close', false);
+hideEventListener('.modal-close', false);
