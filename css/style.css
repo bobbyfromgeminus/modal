@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-color: rgba(255,255,255,1);
@@ -18,6 +19,17 @@ body {
 }
 
 @media screen and (min-width: 560px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255,255,255,1);
+        display: grid;
+        grid-template-columns: 4rem 1fr 4rem;
+        grid-template-rows: 8rem 1fr 3rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
     body {
         width: 100vw;
         height: 100vh;
@@ -133,16 +145,33 @@ footer {
 }
 
 @media screen and (min-width: 560px) {
-
     .modal {
         display: none;
         position: fixed;
         left: 50%;
         top: 50%;
+        transform: translateY(-50%);
         width: 50%;
-        height: 50%;
+        height: auto;
         border: 1px solid rgba(45,45,45,0.7);
-        margin:  -25vh 0 0 -25vw;
+        margin-left: -25vw;
+        background-color: rgba(255,255,255,1);
+        padding: 2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .modal {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        height: auto;
+        border: 1px solid rgba(45,45,45,0.7);
+        margin-left: -25vw;
         background-color: rgba(255,255,255,1);
         padding: 3rem;
         font-size: 0.9rem;
@@ -202,7 +231,7 @@ footer {
 
 
 .modal-button_ok {
-    display: inline-block;
+    display: block;
     height: 2.5rem;
     line-height:  2.5rem;
     padding: 0 2rem;
@@ -222,7 +251,7 @@ footer {
 
 
 .modal-button_cancel {
-    display: inline-block;
+    display: block;
     height: 2.5rem;
     line-height:  2.5rem;
     padding: 0 2rem;
