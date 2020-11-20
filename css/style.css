@@ -40,7 +40,7 @@ body {
     }
 }
 
-header {
+.header {
     grid-row: 1/2;
     grid-column: 1/4;
     background-color: rgba(2,28,52,1);
@@ -48,12 +48,12 @@ header {
     padding: 0 3rem;
 }
 
-header .header {
+.header .header-h1 {
     font-size: 1.5rem;
     color: rgba(255,255,255,0.6)
 }
 
-nav {
+.menu {
     grid-row: 4/5;
     grid-column: 2/3;
     text-align: right;
@@ -72,7 +72,7 @@ nav {
     background-color: rgba(0,0,0,0.6);
 }
 
-main {
+.main {
     grid-row: 2/3;
     grid-column: 2/3;
     color: rgba(34,34,34,0.9);
@@ -88,7 +88,7 @@ main {
     }
 }
 
-footer {
+.footer {
     grid-row: 4/5;
     grid-column: 1/4;
     background-color: rgba(17,41,67,1);
@@ -103,7 +103,7 @@ footer {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.7);
 }
 
 .overlay_show {
@@ -292,4 +292,11 @@ footer {
 .clear {
     display: block;
     clear: both;
+}
+
+.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    transition: filter 3s;
+    transition: -webkit-filter 3s;
 }

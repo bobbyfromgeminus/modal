@@ -105,11 +105,27 @@ function overlayDisplayNone() {
 function showModal() {
     const modal = document.querySelector('.modal');
     modal.setAttribute('class', 'modal modal_show');
+    const header = document.querySelector('.header');
+    const main = document.querySelector('.main');
+    const menu = document.querySelector('.menu');
+    const foot = document.querySelector('.footer');
+    header.setAttribute('class', 'header blur');
+    main.setAttribute('class', 'main blur');
+    menu.setAttribute('class', 'menu blur');
+    foot.setAttribute('class', 'footer blur');
 }
 //      elrejtése
 function hideModal(state) {
     const modal = document.querySelector('.modal');
     modal.setAttribute('class', 'modal modal_hide');
+    const header = document.querySelector('.header');
+    const main = document.querySelector('.main');
+    const menu = document.querySelector('.menu');
+    const footer = document.querySelector('.footer');
+    header.setAttribute('class', 'header');
+    main.setAttribute('class', 'main');
+    menu.setAttribute('class', 'menu');
+    footer.setAttribute('class', 'footer');
     const modalEnd = document.querySelector('.modal_hide');
     modalEnd.addEventListener("webkitAnimationEnd", modalDisplayNone);
     console.log(state);
