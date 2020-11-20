@@ -3,42 +3,39 @@
 
 // Modal overlay megjelenítése
 function showOverlay() {
-    const overlay = document.querySelectorAll('.overlay');
-    for (let i=0; i<overlay.length;i += 1) {
-        overlay[i].setAttribute('class', 'overlay_show');
-    
-    }
+    const overlay = document.querySelector('.overlay');
+    overlay.setAttribute('class', 'overlay overlay_show');
 }
 
 // Modal ablak megjelenítése
 function showModal() {
-    const modal = document.querySelectorAll('.modal');
-    for (let i=0; i<modal.length;i += 1) {
-        modal[i].setAttribute('class', 'modal_show');
-    }
+    const modal = document.querySelector('.modal');
+    modal.setAttribute('class', 'modal modal_show');
 }
 
 // Modal overlay elrejtése
-function hideOverlay(state) {
-    const overlay = document.querySelectorAll('.overlay_show');
-    for (let i=0; i<overlay.length;i += 1) {
-        overlay[i].setAttribute('class', 'overlay_hide');
-        setTimeout(() => {
-            overlay[i].setAttribute('class', 'overlay');
-        }, 990);
-    }
+function hideOverlay() {
+    const overlay = document.querySelector('.overlay');
+    overlay.setAttribute('class', 'overlay overlay_hide');
 }
 
 // Modal ablak elrejtése
 function hideModal(state) {
-    const modal = document.querySelectorAll('.modal_show');
-    for (let i=0; i<modal.length;i += 1) {
-        modal[i].setAttribute('class', 'modal_hide');
-        setTimeout(() => {
-            modal[i].setAttribute('class', 'modal');
-        }, 990);
-    }
+    const modal = document.querySelector('.modal');
+    modal.setAttribute('class', 'modal modal_hide');
+    const hideAnim = document.querySelector('.modal_hide');
+    hideAnim.addEventListener("webkitAnimationEnd", myEndFunction);
     console.log(state);
+}
+
+function modalDisplayNone() {
+    const modal = document.querySelector('.modal_hide');
+    modal.setAttribute('class', 'modal modal_hide modal_none');
+}
+
+function overlayDisplayNone() {
+    const overlay = document.querySelector('.modal_hide');
+    overlay.setAttribute('class', 'overlay overlay_hide overlay_none');
 }
 
 
@@ -46,7 +43,8 @@ function clickOpenModal() {
     showOverlay();
     showModal();
     const okButton = document.getElementById('modal-button_ok');
-    okButton.focus();   
+    okButton.focus(); 
+    alert(element);  
 }
 
 function clickHideModal(state) {
