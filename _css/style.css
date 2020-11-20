@@ -96,10 +96,7 @@ footer {
 
 .overlay_show {
     display: block;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.6);
+    opacity: 1;
     animation: fadeIn ease 1s;
     -webkit-animation: fadeIn ease 1s;
     -moz-animation: fadeIn ease 1s;
@@ -108,15 +105,17 @@ footer {
 }
 
 .overlay_hide {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.6);
+    display: block;
+    opacity: 0;
     animation: fadeOut ease 1s;
     -webkit-animation: fadeOut ease 1s;
     -moz-animation: fadeOut ease 1s;
     -o-animation: fadeOut ease 1s;
     -ms-animation: fadeOut ease 1s;
+}
+
+.overlay_none {
+    display: none;
 }
 
 .modal {
@@ -131,6 +130,23 @@ footer {
     background-color: rgba(255,255,255,1);
     padding: 3rem;
     font-size: 0.9rem;
+}
+
+@media screen and (min-width: 560px) {
+
+    .modal {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: 50%;
+        height: 50%;
+        border: 1px solid rgba(45,45,45,0.7);
+        margin:  -25vh 0 0 -25vw;
+        background-color: rgba(255,255,255,1);
+        padding: 3rem;
+        font-size: 0.9rem;
+    }
 }
 
 .modal_show {
@@ -157,24 +173,6 @@ footer {
 
 .modal_none {
     display: none;
-}
-
-@media screen and (min-width: 560px) {
-
-    .modal {
-        display: none;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        width: 50%;
-        height: 50%;
-        border: 1px solid rgba(45,45,45,0.7);
-        margin:  -25vh 0 0 -25vw;
-        background-color: rgba(255,255,255,1);
-        padding: 3rem;
-        font-size: 0.9rem;
-    }
-    
 }
 
 @keyframes fadeIn {

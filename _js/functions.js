@@ -17,25 +17,31 @@ function showModal() {
 function hideOverlay() {
     const overlay = document.querySelector('.overlay');
     overlay.setAttribute('class', 'overlay overlay_hide');
+    const overlayEnd = document.querySelector('.overlay_hide');
+    overlayEnd.addEventListener("webkitAnimationEnd", overlayDisplayNone);
 }
 
 // Modal ablak elrejtése
 function hideModal(state) {
     const modal = document.querySelector('.modal');
     modal.setAttribute('class', 'modal modal_hide');
-    const hideAnim = document.querySelector('.modal_hide');
-    hideAnim.addEventListener("webkitAnimationEnd", myEndFunction);
+    const modalEnd = document.querySelector('.modal_hide');
+    modalEnd.addEventListener("webkitAnimationEnd", modalDisplayNone);
     console.log(state);
 }
 
+// Modal ablak Diplay: none
 function modalDisplayNone() {
     const modal = document.querySelector('.modal_hide');
     modal.setAttribute('class', 'modal modal_hide modal_none');
+    modal.removeEventListener("webkitAnimationEnd", modalDisplayNone, false);
 }
 
+// Overlay Diplay: none
 function overlayDisplayNone() {
-    const overlay = document.querySelector('.modal_hide');
+    const overlay = document.querySelector('.overlay_hide');
     overlay.setAttribute('class', 'overlay overlay_hide overlay_none');
+    overlay.removeEventListener("webkitAnimationEnd", overlayDisplayNone, false);
 }
 
 
@@ -43,8 +49,7 @@ function clickOpenModal() {
     showOverlay();
     showModal();
     const okButton = document.getElementById('modal-button_ok');
-    okButton.focus(); 
-    alert(element);  
+    okButton.focus();  
 }
 
 function clickHideModal(state) {
